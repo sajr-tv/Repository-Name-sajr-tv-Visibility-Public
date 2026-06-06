@@ -109,11 +109,53 @@ const channels = [
   embedUrl: "https://www.youtube.com/embed/ZlT7vyFF5cY"
 },
 {
-  number: "017",
-  name: "WION",
-  category: "International News",
+  number: "018",
+  name: "Star Plus",
+  category: "Indian Entertainment",
   type: "embed",
-  embedUrl: "https://www.youtube.com/embed/live_stream?channel=UC_gUM8rL-Lrg6O3adPW9K1g"
+  embedUrl: "https://www.yupptv.com/yupptvnew/channels/star-plus/live/embed"
+},
+{
+  number: "019",
+  name: "Colors TV",
+  category: "Indian Entertainment",
+  type: "embed",
+  embedUrl: "https://www.yupptv.com/yupptvnew/channels/colors/live/embed"
+},
+{
+  number: "022",
+  name: "Star Plus US HD",
+  category: "Indian Entertainment",
+  type: "embed",
+  embedUrl: "https://www.yupptv.com/yupptvnew/channels/star-plus-us-hd/live/embed"
+},
+{
+  number: "023",
+  name: "Colors Kannada",
+  category: "Indian Entertainment",
+  type: "embed",
+  embedUrl: "https://www.yupptv.com/yupptvnew/channels/colors-kannada/live/embed"
+},
+{
+  number: "020",
+  name: "Zee TV",
+  category: "Indian Entertainment",
+  type: "embed",
+  embedUrl: "https://www.yupptv.com/yupptvnew/channels/zee-tv/live/embed"
+},
+{
+  number: "021",
+  name: "Zee Cinema",
+  category: "Indian Movies",
+  type: "embed",
+  embedUrl: "https://www.yupptv.com/yupptvnew/channels/zee-cinema/live/embed"
+},
+{
+  number: "025",
+  name: "Kiddo",
+  category: "Kids",
+  type: "embed",
+  embedUrl: "https://www.yupptv.com/fast-tv/kiddo/live"
 },
 ];
 
@@ -166,7 +208,15 @@ export default function Home() {
           {currentChannel.type === "embed" && (
             <iframe
               src={currentChannel.embedUrl}
-              style={{ width: "100%", height: "520px", background: "black", borderRadius: 12, border: "none" }}
+             style={{
+  width: "100%",
+  height: currentChannel.embedUrl?.includes("yupptv.com") ? "900px" : "520px",
+  background: "black",
+  borderRadius: 12,
+  border: "none",
+  overflow: "hidden"
+}}
+scrolling="no"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
             />
