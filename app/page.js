@@ -111,8 +111,9 @@ const channels = [
 {
   number: "017",
   name: "WION",
+  category: "International News",
   type: "embed",
-  embedUrl: "https://www.youtube.com/embed/JAzRXpY2XwA"
+  embedUrl: "https://www.youtube.com/embed/live_stream?channel=UC_gUM8rL-Lrg6O3adPW9K1g"
 },
 ];
 
