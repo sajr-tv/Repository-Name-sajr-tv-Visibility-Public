@@ -206,26 +206,33 @@ export default function Home() {
           )}
 
        {currentChannel.type === "embed" && (
-  <div
+<div
+  style={{
+    height: currentChannel.embedUrl?.includes("yupptv.com")
+      ? "300px"
+      : "520px",
+    overflow: "hidden",
+    borderRadius: 12,
+    background: "black",
+    position: "relative"
+  }}
+>
+  <iframe
+    src={currentChannel.embedUrl}
+    scrolling="no"
     style={{
-      height: "520px",
-      overflow: "hidden",
-      borderRadius: 12,
-      background: "black"
+      width: "100%",
+      height: currentChannel.embedUrl?.includes("yupptv.com")
+        ? "460px"
+        : "520px",
+      background: "black",
+      border: "none",
+      overflow: "hidden"
     }}
-  >
-    <iframe
-      src={currentChannel.embedUrl}
-      style={{
-        width: "100%",
-        height: currentChannel.embedUrl?.includes("yupptv.com") ? "620px" : "520px",
-        background: "black",
-        border: "none"
-      }}
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowFullScreen
-    />
-  </div>
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowFullScreen
+  />
+</div>
 )}
         </section>
 
