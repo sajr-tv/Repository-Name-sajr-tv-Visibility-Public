@@ -205,22 +205,28 @@ export default function Home() {
             <video ref={videoRef} controls autoPlay style={{ width: "100%", background: "black", borderRadius: 12 }} />
           )}
 
-          {currentChannel.type === "embed" && (
-            <iframe
-              src={currentChannel.embedUrl}
-             style={{
-  width: "100%",
-  height: currentChannel.embedUrl?.includes("yupptv.com") ? "900px" : "520px",
-  background: "black",
-  borderRadius: 12,
-  border: "none",
-  overflow: "hidden"
-}}
-scrolling="no"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            />
-          )}
+       {currentChannel.type === "embed" && (
+  <div
+    style={{
+      height: "520px",
+      overflow: "hidden",
+      borderRadius: 12,
+      background: "black"
+    }}
+  >
+    <iframe
+      src={currentChannel.embedUrl}
+      style={{
+        width: "100%",
+        height: currentChannel.embedUrl?.includes("yupptv.com") ? "620px" : "520px",
+        background: "black",
+        border: "none"
+      }}
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+)}
         </section>
 
         <aside style={{ background: "#111", padding: 16, borderRadius: 14, border: "1px solid #222" }}>
